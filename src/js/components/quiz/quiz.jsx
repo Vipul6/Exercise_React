@@ -1,15 +1,15 @@
 import React from 'react'
-import { LOADER_OPTIONS } from '../../constants/constants'
 import Loader from 'react-loader'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import QuestionTemplate from './questionAnswer'
 import Modal from './resultModal'
+import Header from '../common/header'
+import { LOADER_OPTIONS } from '../../constants/constants'
 
 export default class QuizComponent extends React.Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
         this.onCloseModal = this.onCloseModal.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
@@ -47,6 +47,7 @@ export default class QuizComponent extends React.Component {
         return (
             <Loader loaded={!isFetching} className='spinner' options={LOADER_OPTIONS}>
                 <div className="container-fluid">
+                    <Header/>
                     <main className="main-container">
                         {quiz.length > 0 && 
                             _.map(quiz, (item, index) => (

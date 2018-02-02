@@ -1,5 +1,5 @@
 import { call, put, takeEvery, all } from 'redux-saga/effects'
-import * as actionTypes from '../constants/constants.js'
+import * as actionTypes from '../constants/constants'
 import { getData, submitData } from '../apis/api'
 import * as actions from '../actions/actions'
 import 'regenerator-runtime/runtime'

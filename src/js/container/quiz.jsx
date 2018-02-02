@@ -1,7 +1,7 @@
 import * as stateActions from '../actions/actions'
 import { connect } from 'react-redux'
-import QuizComponent from '../components/quiz/quiz'
 import { bindActionCreators } from 'redux'
+import QuizComponent from '../components/quiz/quiz'
 
 const makeMapStateToProps = () => {
       const mapStateToProps = (state, props) => {
