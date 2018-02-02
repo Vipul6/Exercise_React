@@ -29,13 +29,14 @@ app.get('/quiz', function (req, res) {
   });
 });
 
-app.post("/quiz", function(req, res) {
-  if(!req.body.payload) {
-      return res.send({"status": "error", "message": "missing a parameter"});
-  } else {
-      return res.send(req.body);
-  }
-});
+app.post('/quiz', function (req, res) {
+  // First read existing users.
+  fs.readFile("src/assets/json/response.json", 'utf-8', (error, data) => {
+      data = JSON.parse( data );
+      res.end( JSON.stringify(data));
+  });
+})
+
 app.listen(port, function (error) {
   if (error) {
     throw err
